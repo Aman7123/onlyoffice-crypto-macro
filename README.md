@@ -12,3 +12,5 @@ For this to work correctly you should setup the config options at the top of the
 | BTC  | 0.012   |     |   |   |
 | DOGE | 301     |     |   |   |
 | ADA  | 120     |     |   |   |
+
+The function expects to find the coins market abbriviation within the `A` column on a spreadsheet. The macro reaches out to coinapi.io for the current price of the coin in USD, this is an HTTP GET request and the response is in JSON. Our macro then parses this JSON to find the `rate` key/value pair and places that in the USD row for each coin.
