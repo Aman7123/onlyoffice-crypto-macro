@@ -9,7 +9,7 @@ For this to work correctly you should setup the config options at the top of the
 
 | Coin | Holding | USD |   |   |
 |------|---------|-----|---|---|
-| BTC  | 0.012   |     |   |   |
+| BTC  | 0.150   |     |   |   |
 | DOGE | 301     |     |   |   |
 | ADA  | 120     |     |   |   |
 
