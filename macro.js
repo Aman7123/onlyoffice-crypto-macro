@@ -8,7 +8,7 @@
     // Varibale setup
     var oWorksheet = Api.GetActiveSheet();
     var baseUrl = "https://rest.coinapi.io/";
-    var apikey = "?apikey=KEY-HERE";
+    var apikey = "?apikey=FA47DDF9-50B4-466D-A3CF-2BB9F4C7DBD7";
     var xmlhttp = new XMLHttpRequest();
     
     for (i = startRowNum; i < (endRowNum + 1); i++) {
