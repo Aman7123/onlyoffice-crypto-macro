@@ -3,16 +3,15 @@
     // Config options
     var debug = true;
     var startRowNum = 2;
-    var endRowNum = 9;
+    var endRowNum = 10;
     
     // Varibale setup
     var oWorksheet = Api.GetActiveSheet();
     var baseUrl = "https://rest.coinapi.io/";
-    var apikey = "?apikey=FA47DDF9-50B4-466D-A3CF-2BB9F4C7DBD7";
+    var apikey = "?apikey=<api-key-here>";
     var xmlhttp = new XMLHttpRequest();
     
     for (i = startRowNum; i < (endRowNum + 1); i++) {
-        // Grab A startRowNum from sheet
         var columnAValue = oWorksheet.GetRange("A" + i);
         var columnCValue = oWorksheet.GetRange("C" + i);
         var getCoinName = columnAValue.GetText();
@@ -21,18 +20,15 @@
         
         xmlhttp.open("GET", link, false);
         xmlhttp.send();
-        
-        var coinVal;
         if(xmlhttp.status == 200) {
             columnCValue.SetValue(""); // Clear old data
-            coinVal = JSON.parse(xmlhttp.responseText).rate; // Parse JSON
+            var coinVal = JSON.parse(xmlhttp.responseText).rate; // Parse JSON
             columnCValue.SetValue(coinVal);
         } else {
             console.log(xmlhttp.status);
         }
         if(debug) {
-            console.log("Coin: " + getCoinName + ", HTTP Status: " + xmlhttp.status + ", USD: " + coinVal);
-            //console.log("Rate Limiting (used/total): " + xmlhttp.getResponseHeader("X-RateLimit-Used") + "/" + xmlhttp.getResponseHeader("X-RateLimit-Limit"));
+            console.log("Rate Limiting (used/total): " + xmlhttp.getResponseHeader("X-RateLimit-Used") + "/" + xmlhttp.getResponseHeader("X-RateLimit-Limit"));
         }
     }
 }
