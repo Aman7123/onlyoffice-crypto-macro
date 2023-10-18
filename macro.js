@@ -5,7 +5,6 @@
 
     // Variable setup
     var oWorksheet = Api.GetActiveSheet();
-    console.log(oWorksheet);
     var baseUrl = "https://rest.coinapi.io/";
     var apikey = "?apikey=APIKEY";
 
