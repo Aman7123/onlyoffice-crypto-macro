@@ -17,7 +17,5 @@ The function expects to find the coins market abbriviation within the `A` column
 
 When making too many requests in one day this could lead to maxing out the rate limit of the coinapi.io account. To help solve the issue of blank prices being loaded into the spreadsheet I inluded an IF statement to ensure the response code came back as a 200 before populating.
 
-The debug function is still a work in progress!
-
 ## Environment
 * https://github.com/ONLYOFFICE/docker-onlyoffice-owncloud
